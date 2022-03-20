@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(17, 17, 17);
+}
+
+.frem {
+    position: relative;
+    width: 16rem;
+    height: 16rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+.rotat {
+    position: absolute;
+    width: 30rem;
+    height: 15rem;
+
+}
+
+.frem:hover .rotat {
+    background: rgb(190, 57, 124);
+    -webkit-animation: rotate 3s infinite ease-in-out;
+    animation: rotate 5s infinite ease-in-out;
+}
+
+.cant {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 255px;
+    height: 255px;
+    background: rgb(17, 17, 17);
+    z-index: 1;
+}
+
+.area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 230px;
+    height: 230px;
+    background: rgb(17, 17, 17);
+    z-index: 2;
+    border: 1px solid rgb(121, 233, 117);
+    cursor: pointer;
+}
+
+.frem .cant .area img {
+    width: 12rem;
+
+}
+
+@-webkit-keyframes rotate {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}

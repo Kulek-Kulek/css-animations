@@ -1,0 +1,137 @@
+:root {
+    --clrOne: #00ec00;
+    --clrTwo: #e60c83;
+    --clrThree: #1a01fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #050505;
+    min-height: 100vh;
+}
+
+.cube {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg);
+    margin: 0 auto;
+    -webkit-animation: animate 4s linear infinite;
+    animation: animate 20s linear infinite;
+}
+
+.cube:hover {
+    transform: translateX(90deg);
+}
+
+.cube div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.cube div span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
+}
+
+.side-one {
+    background: linear-gradient(#201d1d, var(--clrOne));
+}
+
+.side-two {
+    background: linear-gradient(#151515, var(--clrTwo));
+}
+
+.side-three {
+    background: linear-gradient(#151515, var(--clrThree));
+}
+
+
+.top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95%;
+    height: 95%;
+    background: #222;
+    transform: rotateX(90deg) translateZ(150px);
+    text-align: center;
+    line-height: 300px;
+}
+
+.top span {
+    font-size: 4rem;
+    color: #fff;
+}
+
+.top::before {
+    content: 'CSS';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    color: #fff;
+    transform: translateZ(-450px);
+    -webkit-filter: blur(20px);
+    filter: blur(20px);
+}
+
+.top-one::before {
+    background: var(--clrOne);
+    box-shadow: 0 0 120px rgba(0, 255, 0, .2), 0 0 200px rgba(0, 255, 0, .4), 0 0 300px rgba(0, 255, 0, .6);
+}
+
+.top-two::before {
+    background: var(--clrTwo);
+    box-shadow: 0 0 120px rgba(224, 16, 145, 0.2), 0 0 200px rgba(235, 57, 140, 0.4), 0 0 300px rgba(233, 80, 169, 0.6);
+}
+
+.top-three::before {
+    background: var(--clrThree);
+    box-shadow: 0 0 120px rgba(57, 4, 141, 0.2), 0 0 200px rgba(65, 21, 224, 0.4), 0 0 300px rgba(104, 68, 236, 0.6);
+}
+
+
+
+@-webkit-keyframes animate {
+    0% {
+        transform: rotateX(30deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateX(30deg) rotateY(360deg);
+    }
+}
+
+
+
+
+
+@keyframes animate {
+    0% {
+        transform: rotateX(-30deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateX(-30deg) rotateY(360deg);
+    }
+}

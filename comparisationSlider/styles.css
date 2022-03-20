@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.container .slide.slide1 {
+    padding: 5rem;
+    background: url(/slide1.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.container .slide.slide2 {
+    background: url(/slide2.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    left: 50%;
+}
